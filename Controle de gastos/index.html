@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>API Web Storage</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <link rel="stylesheet" type="text/css" href="Trabalho.css">
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" 
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" 
+    crossorigin="anonymous">
+
+   
+</head>
+<body>
+    <div class="menu">
+        <nav class="navbar-expand">
+          <div class="nav nav-tabs" id="nav-tab" role="tablist">
+            <a class="nav-item nav-link active" id="nav-home-tab" data-toggle="tab" href="#nav-home" role="tab" aria-controls="nav-home" aria-selected="true">Cadastramento</a>
+            <a class="nav-item nav-link" id="nav-profile-tab" data-toggle="tab" href="#nav-profile" role="tab" aria-controls="nav-profile" aria-selected="false">Gastos por categoria</a>
+            <a class="nav-item nav-link" id="nav-contact-tab" data-toggle="tab" href="#nav-contact" role="tab" aria-controls="nav-contact" aria-selected="false">Gastos por dia</a>
+          </div>
+        </nav>
+     </div>
+        <div class="tab-content container-fluid" id="nav-tabContent">
+          <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
+                    <form id="frmCadastro">
+                            <div class="form-group">
+                                <label for="descricao">Nome do Produto:</label>
+                                <input type="text" id="descricao" class="form-control">
+                            </div>
+                           
+                            <div class="form-group">
+                                <label for="gasto">Valor:</label>
+                                <input type="number" step="0.010" id="gasto" class="form-control">
+                            </div>  
+
+                            <div class="form-group">
+                                <label for="data">Data:</label>
+                                <input type="date" id="data" class="form-control" value="dd/MM/yyyy">
+                            </div>
+                           
+                            <div class="form-group">
+                                <label for="categoria">Categoria:</label>
+                                <select id="categoria" class="form-control">
+                                    <option value="Sem categoria" id="1">Sem categoria</option> 
+                                    <option value="Hortifruti e mercearia" id="2">Hortifruti e mercearia</option>
+                                    <option value="Higiene e limpeza" id="3">Higiene e limpez</option>
+                                    <option value="Temperos" id="4">Temperos</option> 
+                                    <option value="Açougue" id="5">Açougue</option>
+                                    <option value="Adega e bebidas" id="6">Adega e bebidas</option>
+                                    <option value="Cereais" id="7">Cereais</option>
+                                    <option value="Frios e laticínios" id="8">Frios e laticínios</option>
+                                </select>
+                            </div>
+                        
+                            
+                        <input type="submit" value="Salvar" id="btnSalvar" class="btn btn-primary mb-2">
+                    </form>
+                    <div class="table-responsive tabela">
+                        <table class="table" id="tblListar"></table>    
+                    </div>
+                    
+          </div>
+          <div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">
+                <canvas id="primeiroGrafico"  width="500" height="550"></canvas>
+            </div>
+            <div class="tab-pane fade" id="nav-contact" role="tabpanel" aria-labelledby="nav-contact-tab">
+                <canvas id="segundoGrafico"  width="500" height="550"></canvas>
+          </div>
+        </div>
+
+        </div>    
+   
+    
+    
+
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script type="text/javascript" language="javascript" src="Trabalho.js"></script>
+   
+    
+    
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" 
+    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" 
+    crossorigin="anonymous"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.1/Chart.min.js"></script>
+</body>
+</html>
